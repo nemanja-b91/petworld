@@ -1,0 +1,110 @@
+@import "../../assets/scss/mixins/mixins";
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid #f2f2f2;
+  .siteBranding {
+    position: relative;
+    order: 1;
+    z-index: 101;
+  }
+  .mainNavigation {
+    order: 2;
+    .navMenu {
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+
+      &__link {
+        @include defaultMenuItem;
+        &_active {
+          color: #ff6853;
+        }
+      }
+      a {
+        padding: 1rem 2rem;
+        &:first-of-type {
+          padding-left: 0;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        padding: 0;
+        &__item {
+          padding: 0.5rem;
+          a {
+            padding: 0;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 992px) {
+      position: fixed;
+      display: flex;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      align-items: center;
+      justify-content: center;
+      transition: all .3s ease-in;
+      z-index: 100;
+      .navMenu {
+        flex-direction: column;
+        justify-content: center;
+      }
+      &__opened {
+        right: 0;
+      }
+    }
+  }
+  .additionalNavigationLinks {
+    order: 3;
+    a {
+      @include defaultMenuItem;
+      &::before {
+        content: "\f095";
+        color: #ff6853;
+        font-family: "FontAwesome";
+        margin-right: 0.875rem;
+        font-size: 90%;
+        font-weight: 900;
+      }
+    }
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+  .mobileContactsMenuContainer {
+    padding: 0.5rem;
+    a {
+      display: block;
+      text-align: center;
+      @include defaultMenuItem;
+    }
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
+  .menuToggle {
+    order: 4;
+    margin-left: auto;
+    position: relative;
+    z-index: 101;
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    background-color: #ffffff;
+  }
+}

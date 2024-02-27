@@ -1,0 +1,15 @@
+/**
+ * Main mixins directory
+ */
+
+@mixin defaultMenuItem() {
+  color: #333437;
+  transition: all .3s ease;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 600;
+  &:hover,
+  &_active {
+    color: #ff6853;
+  }
+}
