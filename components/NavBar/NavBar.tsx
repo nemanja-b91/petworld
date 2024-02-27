@@ -47,11 +47,6 @@ export default function NavBar() {
                         />
                     </Link>
                 </div>
-                <div className={`${styles.additionalNavigationLinks} ms-auto`}>
-                    <div className="contacts-menu-container">
-                        <a href="tel:12345678910">(777) 901–5101</a>
-                    </div>
-                </div>
                 <nav id="site-navigation" className={`${styles.mainNavigation} ${isMobileOpened ? styles.mainNavigation__opened : ''}`}>
                     <div className="primary-menu-wrapper">
                         <div className="primary-menu-container">
@@ -61,9 +56,6 @@ export default function NavBar() {
                                         <Link className={`${styles.navMenu__link} ${pathname === link.href ? `${styles.navMenu__link_active}` : ''}`} href={link.href}>{link.title}</Link></li>
                                 ))}
                             </ul>
-                        </div>
-                        <div className={`mobile-contacts-menu-container ${styles.mobileContactsMenuContainer}`}>
-                            <a href="tel:12345678910">(777) 901–5101</a>
                         </div>
                     </div>
                 </nav>

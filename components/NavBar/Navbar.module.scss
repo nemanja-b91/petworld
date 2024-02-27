@@ -61,34 +61,6 @@
       }
     }
   }
-  .additionalNavigationLinks {
-    order: 3;
-    a {
-      @include defaultMenuItem;
-      &::before {
-        content: "\f095";
-        color: #ff6853;
-        font-family: "FontAwesome";
-        margin-right: 0.875rem;
-        font-size: 90%;
-        font-weight: 900;
-      }
-    }
-    @media screen and (max-width: 992px) {
-      display: none;
-    }
-  }
-  .mobileContactsMenuContainer {
-    padding: 0.5rem;
-    a {
-      display: block;
-      text-align: center;
-      @include defaultMenuItem;
-    }
-    @media screen and (min-width: 992px) {
-      display: none;
-    }
-  }
   .menuToggle {
     order: 4;
     margin-left: auto;

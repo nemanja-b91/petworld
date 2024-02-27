@@ -1,0 +1,66 @@
+.recentPostWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 30px;
+  &__single {
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    h2 {
+      font-size: 28px;
+      line-height: 34px;
+      font-weight: 600;
+      color: #2c2738;
+      transition: all .3s ease-in-out;
+      &:hover {
+        color: #ff6853;
+      }
+    }
+    span {
+      color: #ff6853;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+    }
+  }
+  &__short {
+    border-bottom: 1px solid #DBE2EA;
+    padding-bottom: 20px;
+    h4 {
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 600;
+      color: #2c2738;
+      transition: all .3s ease-in-out;
+      &:hover {
+        color: #ff6853;
+      }
+    }
+    p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: -0.2px;
+    }
+    span {
+      color: #ff6853;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+    }
+  }
+}
+
+.blogBackground {
+  background-image: url("/assets/img/blog5.jpg");
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 20px;
+  aspect-ratio: 16 / 10;
+}

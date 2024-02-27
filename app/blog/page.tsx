@@ -1,5 +1,6 @@
 import styles from "@/app/page.module.scss";
 import SinglePageHero from "@/components/SinglePageHero/SinglePageHero";
+import BlogList from "@/components/BlogList/BlogList";
 const pageName: String = 'Blog';
 
 export const metadata = {
@@ -35,7 +36,8 @@ export default function BlogPage() {
     return (
         <div className={styles.main}>
             <div className="container">
-                <SinglePageHero name={pageName}/>
+                {/*<SinglePageHero name={pageName}/>*/}
+                <BlogList />
             </div>
         </div>
     )
