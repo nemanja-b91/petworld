@@ -1,9 +1,9 @@
 'use client'
 import styles from './Navbar.module.scss';
-import { usePathname } from 'next/navigation'
+import {usePathname} from 'next/navigation'
 import Link from "next/link";
 import Image from "next/image";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const links = [
     {
@@ -35,6 +35,11 @@ export default function NavBar() {
     const onMobileOpen = () => {
         setIsMobileOpened(!isMobileOpened)
     }
+
+    useEffect(() => {
+        setIsMobileOpened(false)
+    }, [pathname]);
+
 
     return (
         <header id={'mainHeader'} className={'siteHeader'}>

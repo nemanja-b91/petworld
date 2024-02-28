@@ -1,4 +1,25 @@
 .footerContainer {
   background-color: #232225;
   padding: 50px 0;
+  &__copyright {
+    @media screen and (max-width: 992px) {
+      text-align: center;
+    }
+  }
+  &__links {
+    justify-content: end;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    a {
+      color: #ffffff;
+      text-decoration: underline !important;
+      &:hover {
+        color: rgba(255, 255, 255, 0.3);
+      }
+    }
+    @media screen and (max-width: 992px) {
+      justify-content: center;
+    }
+  }
 }

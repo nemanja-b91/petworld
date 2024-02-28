@@ -23,6 +23,11 @@
       line-height: 20px;
       letter-spacing: -0.2px;
     }
+    @media screen and (max-width: 992px) {
+      border-bottom: 1px solid #DBE2EA;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
   }
   &__short {
     border-bottom: 1px solid #DBE2EA;
@@ -52,11 +57,16 @@
       line-height: 20px;
       letter-spacing: -0.2px;
     }
+    @media screen and (max-width: 992px) {
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    display: block;
   }
 }
 
 .blogBackground {
-  background-image: url("/assets/img/blog5.jpg");
   border-radius: 10px;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,6 +1,7 @@
 import styles from "@/app/page.module.scss";
 import SinglePageHero from "@/components/SinglePageHero/SinglePageHero";
 import BlogList from "@/components/BlogList/BlogList";
+import {Suspense} from "react";
 const pageName: String = 'Blog';
 
 export const metadata = {
@@ -29,15 +30,29 @@ export const metadata = {
         type: 'website',
     }
 }
+async function getData() {
+    const res = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=20fdfd06be214a1995f13993eec28c9c&pageSize=5&category=business')
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
 
+    if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error('Failed to fetch data')
+    }
 
-export default function BlogPage() {
+    return res.json()
+}
 
+export default async function BlogPage() {
+    const data = await getData()
+    console.log('data: ', data)
     return (
         <div className={styles.main}>
             <div className="container">
-                {/*<SinglePageHero name={pageName}/>*/}
-                <BlogList />
+                <SinglePageHero name={pageName}/>
+                <Suspense>
+                    <BlogList posts={data?.articles}/>
+                </Suspense>
             </div>
         </div>
     )
