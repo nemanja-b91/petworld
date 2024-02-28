@@ -66,6 +66,10 @@
     margin-left: auto;
     position: relative;
     z-index: 101;
+    border: none;
+    background-color: #ffffff;
+    color: #ff6853;
+    font-size: 26px;
     @media screen and (min-width: 992px) {
       display: none;
     }

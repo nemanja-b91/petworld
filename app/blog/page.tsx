@@ -45,7 +45,6 @@ async function getData() {
 
 export default async function BlogPage() {
     const data = await getData()
-    console.log('data: ', data)
     return (
         <div className={styles.main}>
             <div className="container">
