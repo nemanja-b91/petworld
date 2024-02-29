@@ -54,7 +54,7 @@ export default function FilterComponent() {
             <h1>You've searched for:</h1>
             {city && <p>City: {city}</p>}
             {category && <p>Category: {category}</p>}
-            {data && (
+            {data && data?.length > 0 && (
                 <ul>
                     {data.map((item) => (
                         <li key={item?.id}>{item?.title}</li>
