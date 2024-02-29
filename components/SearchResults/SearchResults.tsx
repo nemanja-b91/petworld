@@ -13,10 +13,10 @@ export default function SearchResults({results}: any) {
                                     alt={item.title}
                                     src={photo}
                                     width={290}
-                                    height={0}
-                                    style={{width: '100%', height: '100%'}}
+                                    height={198}
+                                    style={{width: '100%'}}
                                 />
-                                <div className="card-body">
+                                <div className={`card-body ${styles.resultItems__item_content}`}>
                                     <h5 className="card-title">{item?.title}</h5>
                                     <p className="card-text">{item?.excerpt}</p>
                                     <button
