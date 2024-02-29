@@ -1,8 +1,6 @@
 "use client";
 import styles from './BlogList.module.scss'
 import Link from "next/link";
-import axios from "axios";
-import {useState} from "react";
 
 type Post = {
     title: string,

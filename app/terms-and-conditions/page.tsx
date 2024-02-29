@@ -6,25 +6,12 @@ const pageName: String = 'Terms and conditions';
 export const metadata = {
     metadataBase: new URL('https://acme.com'),
     title: `PetWorld | ${pageName}`,
-    description: 'I am the best web developer ever!',
+    description: 'Sve sto vam je potrebno za vašeg ljubimca',
     openGraph: {
-        title: 'Next.js',
-        description: 'The React Framework for the Web',
-        url: 'https://nextjs.org',
-        siteName: 'Next.js',
-        images: [
-            {
-                url: 'https://nextjs.org/og.png', // Must be an absolute URL
-                width: 800,
-                height: 600,
-            },
-            {
-                url: 'https://nextjs.org/og-alt.png', // Must be an absolute URL
-                width: 1800,
-                height: 1600,
-                alt: 'My custom alt',
-            },
-        ],
+        title: `PetWorld`,
+        description: 'Sve sto vam je potrebno za vašeg ljubimca',
+        url: 'petworld.com',
+        siteName: 'PetWorld',
         locale: 'en_US',
         type: 'website',
     }

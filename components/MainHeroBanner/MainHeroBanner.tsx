@@ -7,7 +7,7 @@ export default function MainHeroBanner() {
         <div className={styles.mainHeroBanner}>
             <div className="container">
                 <div className="row align-items-center">
-                    <div className={`col-md-6 ${styles.mainHeroBanner__wrapper}`}>
+                    <div id='main-filter' className={`col-md-6 ${styles.mainHeroBanner__wrapper}`}>
                         <div className={styles.mainHeroBanner__content}>
                             <h1>Yay, we love your pets!</h1>
                             <p>Please give us basic information. Thanks!</p>

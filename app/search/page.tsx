@@ -1,13 +1,12 @@
-import styles from "@/app/page.module.scss";
-import SinglePageHero from "@/components/SinglePageHero/SinglePageHero";
-const pageName: String = 'Contact';
-
+import FilterComponent from "@/components/Filter/Filter";
+import {Suspense} from "react";
+const pageName = 'Search';
 export const metadata = {
     metadataBase: new URL('https://acme.com'),
     title: `PetWorld | ${pageName}`,
     description: 'Sve sto vam je potrebno za vašeg ljubimca',
     openGraph: {
-        title: `PetWorld`,
+        title: `PetWorld | ${pageName}`,
         description: 'Sve sto vam je potrebno za vašeg ljubimca',
         url: 'petworld.com',
         siteName: 'PetWorld',
@@ -16,14 +15,15 @@ export const metadata = {
     }
 }
 
+export default function FilterPage() {
 
-export default function ContactPage() {
 
     return (
-        <div className={styles.main}>
-            <div className="container">
-                <SinglePageHero name={pageName}/>
-            </div>
+        <div className='container'>
+            <Suspense fallback={'<p>Loadiiiiiiiiiiiiiiiiing....</p>'}>
+                <FilterComponent />
+            </Suspense>
+
         </div>
     )
 }
