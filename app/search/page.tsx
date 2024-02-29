@@ -1,5 +1,4 @@
 import FilterComponent from "@/components/Filter/Filter";
-import {Suspense} from "react";
 const pageName = 'Search';
 export const metadata = {
     metadataBase: new URL('https://acme.com'),
@@ -20,10 +19,7 @@ export default function FilterPage() {
 
     return (
         <div className='container'>
-            <Suspense fallback={'<p>Loadiiiiiiiiiiiiiiiiing....</p>'}>
-                <FilterComponent />
-            </Suspense>
-
+            <FilterComponent />
         </div>
     )
 }

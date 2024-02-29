@@ -43,9 +43,7 @@ export default async function BlogPage() {
         <div className={styles.main}>
             <div className="container">
                 <SinglePageHero name={pageName}/>
-                <Suspense>
-                    <BlogList posts={data?.articles}/>
-                </Suspense>
+                <BlogList posts={data?.articles}/>
             </div>
         </div>
     )

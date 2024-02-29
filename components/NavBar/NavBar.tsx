@@ -17,6 +17,11 @@ const links = [
         class: 'menu-item'
     },
     {
+        href: '/search',
+        title: 'Search',
+        class: 'menu-item'
+    },
+    {
         href: '/blog',
         title: 'Blog',
         class: 'menu-item'

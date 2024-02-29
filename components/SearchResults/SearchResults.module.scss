@@ -1,0 +1,24 @@
+.resultItems {
+  &__item {
+    --bs-card-border-color: transparent;
+    //box-shadow: 3px 4px 5px 0 rgba(240, 145, 8, 0.4);
+    box-shadow: 0 29.31343px 29.31343px 0 rgba(0, 0, 0, 0.08);
+    transition: all .3s ease-in-out;
+
+    &_btn {
+      background-color: rgba(240, 145, 8, 1);
+      color: #ffffff !important;
+
+      &:focus,
+      &:active,
+      &:hover {
+        background-color: rgb(240, 145, 8, 0.9) !important;
+      }
+    }
+
+    &:hover {
+
+      box-shadow: 0 29.31343px 29.31343px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+}
