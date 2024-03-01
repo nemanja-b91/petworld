@@ -1,5 +1,5 @@
 "use client";
-import {useEffect, useState} from "react";
+import {Suspense, useEffect, useState} from "react";
 import {useSearchParams} from "next/navigation";
 import styles from "@/app/page.module.scss";
 import SearchResults from "@/components/SearchResults/SearchResults";
@@ -62,13 +62,15 @@ export default function FilterComponent() {
                     </div>
                     <div className="col-md-9">
                         <h4>Results section</h4>
-                        {data && data?.length > 0 ?
-                            <SearchResults results={data}/> :
+                        <Suspense>
+                            <SearchResults results={data}/>
+                        </Suspense>
+                        {city === '' && category === '' && (
                             <>
                                 <p>No results per selected criteria. Go back to homepage and change filters while we finish developing filtering functionality on search page.</p>
                                 <p>Sorry for the inconvenience. :)</p>
                             </>
-                        }
+                        )}
                     </div>
                 </div>
             </div>
