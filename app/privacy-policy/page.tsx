@@ -1,13 +1,15 @@
 import styles from "@/app/page.module.scss";
 import SinglePageHero from "@/components/SinglePageHero/SinglePageHero";
+import {openGraphImage} from "@/app/shared-metadata";
 
-const pageName: String = 'Privacy Policy';
+const pageName: String = 'Opšti uslovi korišćenja i odricanje od odgovornosti';
 
 export const metadata = {
     metadataBase: new URL('https://acme.com'),
     title: `PetWorld | ${pageName}`,
     description: 'Sve sto vam je potrebno za vašeg ljubimca',
     openGraph: {
+        ...openGraphImage,
         title: `PetWorld`,
         description: 'Sve sto vam je potrebno za vašeg ljubimca',
         url: 'petworld.com',
@@ -23,8 +25,8 @@ export default function PrivacyPolicy() {
     return (
         <div className={styles.main}>
             <div className="container">
+                <SinglePageHero name={pageName}/>
                 <article>
-                    <h1>Opšti uslovi korišćenja i odricanje od odgovornosti</h1>
                     <h2>Korišćenjem sajta petworld.com (nadalje <strong>PetWorld</strong>) saglasni
                         ste sa uslovima i pravilima korišćenja sajta.
                     </h2>

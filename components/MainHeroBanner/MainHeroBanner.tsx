@@ -1,6 +1,6 @@
 import styles from './MainHeroBanner.module.scss'
 import MainHeroBannerForm from "@/components/MainHeroBanner/MainHeroBannerForm";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export default function MainHeroBanner() {
     return (

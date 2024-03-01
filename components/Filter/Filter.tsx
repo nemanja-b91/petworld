@@ -45,17 +45,27 @@ export default function FilterComponent() {
 
     useEffect(() => {
         setIsErrorVisible(false)
-        if (city && city !== '') {
+
+        if ((city && city !== '') && (category && category !== '')) {
+            url = `${process.env.BACKEND_API}/v1/search?city=${city}$category=${category}`
+            fetchDataByFilter(url)
+        } else if (city && city !== '') {
             url = `${process.env.BACKEND_API}/v1/search?city=${city}`
             fetchDataByFilter(url)
         } else if (category && category !== '') {
             url = `${process.env.BACKEND_API}/v1/search?category=${category}`
             fetchDataByFilter(url)
-        } else if ((city && city !== '') && (category && category !== '')) {
-            url = `${process.env.BACKEND_API}/v1/search?city=${city}$category=${category}`
-            fetchDataByFilter(url)
         }
     }, [])
+
+    const noResultsComponent = () => {
+        return (
+            <>
+                <p>No results per selected criteria. Go back to homepage and change filters while we finish developing filtering functionality on search page.</p>
+                <p>Sorry for the inconvenience. :)</p>
+            </>
+        )
+    }
 
     return (
         <div className={styles.main}>
@@ -67,17 +77,11 @@ export default function FilterComponent() {
                     </div>
                     <div className="col-md-9">
                         <h4>Results section</h4>
-                        <Suspense fallback={<p>Loading data...</p>}>
-                            <SearchResults results={data}/>
+                        <Suspense>
+                            {data && data.length > 0 ? <SearchResults results={data}/> : noResultsComponent()}
                         </Suspense>
                         {isErrorVisible && (
                             <p className='text-danger'>Sorry.. Error fetching data.</p>
-                        )}
-                        {city === '' && category === '' && (
-                            <>
-                                <p>No results per selected criteria. Go back to homepage and change filters while we finish developing filtering functionality on search page.</p>
-                                <p>Sorry for the inconvenience. :)</p>
-                            </>
                         )}
                     </div>
                 </div>

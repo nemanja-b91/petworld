@@ -2,6 +2,7 @@ import styles from "@/app/page.module.scss";
 import SinglePageHero from "@/components/SinglePageHero/SinglePageHero";
 import BlogList from "@/components/BlogList/BlogList";
 import {Suspense} from "react";
+import {openGraphImage} from "@/app/shared-metadata";
 
 const pageName: String = 'Blog';
 
@@ -10,6 +11,7 @@ export const metadata = {
     title: `PetWorld | ${pageName}`,
     description: 'Sve sto vam je potrebno za vašeg ljubimca',
     openGraph: {
+        ...openGraphImage,
         title: `PetWorld | ${pageName}`,
         description: 'Sve sto vam je potrebno za vašeg ljubimca',
         url: 'petworld.com',

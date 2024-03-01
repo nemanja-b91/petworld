@@ -1,0 +1,1 @@
+export const openGraphImage = { images: ['/assets/img/blog5.jpg'] }

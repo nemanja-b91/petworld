@@ -1,13 +1,15 @@
 import styles from "@/app/page.module.scss";
 import SinglePageHero from "@/components/SinglePageHero/SinglePageHero";
+import {openGraphImage} from "@/app/shared-metadata";
 
-const pageName: String = 'Terms and conditions';
+const pageName: String = 'Polisa o privatnosti';
 
 export const metadata = {
     metadataBase: new URL('https://acme.com'),
     title: `PetWorld | ${pageName}`,
     description: 'Sve sto vam je potrebno za vašeg ljubimca',
     openGraph: {
+        ...openGraphImage,
         title: `PetWorld`,
         description: 'Sve sto vam je potrebno za vašeg ljubimca',
         url: 'petworld.com',
@@ -23,8 +25,8 @@ export default function TermsAndConditionsPage() {
     return (
         <div className={styles.main}>
             <div className="container">
+                <SinglePageHero name={pageName}/>
                 <article>
-                    <h1>Polisa o privatnosti</h1>
                     <div>Poštovani korisnici,<br/>Ovaj web
                         sajt, <strong><em>petworld.com</em></strong>, poštuje privatnost svojih korisnika i vodi računa o zaštiti ličnih podataka.<br/>Molimo vas da pažljivo pročitate sledeću
                         politiku privatnosti kako biste bili upoznati sa načinom na koji sajt prikuplja, koristi i štiti vaše podatke.
