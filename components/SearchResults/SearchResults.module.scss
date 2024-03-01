@@ -1,7 +1,14 @@
 .resultItems {
   &__item {
     --bs-card-border-color: transparent;
-    //box-shadow: 3px 4px 5px 0 rgba(240, 145, 8, 0.4);
+    border-radius: 10px;
+    border: 2px solid #efefef;
+    margin-bottom: 2.5rem;
+    padding: 0.5rem;
+    img {
+      border-radius: 10px;
+    }
+
     box-shadow: 0 29.31343px 29.31343px 0 rgba(0, 0, 0, 0.08);
     transition: all .3s ease-in-out;
     display: flex;

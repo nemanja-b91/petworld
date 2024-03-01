@@ -19,6 +19,7 @@ type Result = {
 
 export default function FilterComponent() {
     const [data, setData] = useState(Array<Result>)
+    const [isErrorVisible, setIsErrorVisible] = useState(false)
     const searchParams = useSearchParams()
 
     let url = '';
@@ -34,12 +35,16 @@ export default function FilterComponent() {
         )
             .then(res => res.json())
             .then((response) => {
-                console.log('response: ', response)
                 setData(response.results)
+            })
+            .catch((e) => {
+                console.log('error')
+                setIsErrorVisible(true)
             })
     }
 
     useEffect(() => {
+        setIsErrorVisible(false)
         if (city && city !== '') {
             url = `${process.env.BACKEND_API}/v1/search?city=${city}`
             fetchDataByFilter(url)
@@ -62,9 +67,12 @@ export default function FilterComponent() {
                     </div>
                     <div className="col-md-9">
                         <h4>Results section</h4>
-                        <Suspense>
+                        <Suspense fallback={<p>Loading data...</p>}>
                             <SearchResults results={data}/>
                         </Suspense>
+                        {isErrorVisible && (
+                            <p className='text-danger'>Sorry.. Error fetching data.</p>
+                        )}
                         {city === '' && category === '' && (
                             <>
                                 <p>No results per selected criteria. Go back to homepage and change filters while we finish developing filtering functionality on search page.</p>
