@@ -4,7 +4,7 @@ import styles from './SearchResults.module.scss';
 
 export default function SearchResults({results}: any) {
     // const photo = '/assets/img/blog5.jpg';
-    const photo = 'https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg';
+    const photo = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png';
 
     const trimText = (text: string, length: number) => {
         if(text.length > length) {

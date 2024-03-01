@@ -9,13 +9,6 @@ module.exports = {
         includePaths: [path.join(__dirname, 'styles')],
     },
     images: {
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: '**',
-                port: '',
-                pathname: '**',
-            },
-        ],
+        domains: ["upload.wikimedia.org"],
     },
 }
