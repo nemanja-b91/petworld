@@ -51,7 +51,7 @@ export default function FilterComponent() {
             fetchDataByFilter(url)
         }
     }, [])
-
+ 
     return (
         <div className={styles.main}>
             <div className="container">
