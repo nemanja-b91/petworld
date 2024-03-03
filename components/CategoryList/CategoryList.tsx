@@ -14,7 +14,7 @@ export default function CategoryList() {
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
                     <Link href={'/restaurants'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
-                                <Image src={'/assets/img/cat.jpg'}
+                                <Image src={'/assets/img/formatted/pet-in-restaurant.jpg'}
                                        layout='fill'
                                        objectPosition='center'
                                        objectFit='cover'
@@ -29,7 +29,7 @@ export default function CategoryList() {
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
                         <Link href={'/shops'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
-                                <Image src={'/assets/img/cat.jpg'}
+                                <Image src={'/assets/img/formatted/pet-store-shop.jpg'}
                                        layout='fill'
                                        objectPosition='center'
                                        objectFit='cover'
@@ -44,7 +44,7 @@ export default function CategoryList() {
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
                         <Link href={'/saloons'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
-                                <Image src={'/assets/img/cat.jpg'}
+                                <Image src={'/assets/img/formatted/pet-in-grooming-saloon.jpg'}
                                        layout='fill'
                                        objectPosition='center'
                                        objectFit='cover'
@@ -52,14 +52,14 @@ export default function CategoryList() {
                                        alt={''}
                                        loading={'lazy'}
                                 />
-                                <p className={styles.categorySectionWrapper__single__title}><span>Sallons</span></p>
+                                <p className={styles.categorySectionWrapper__single__title}><span>Saloons</span></p>
                             </div>
                         </Link>
                     </div>
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
                         <Link href={'/veterinarians'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
-                                <Image src={'/assets/img/cat.jpg'}
+                                <Image src={'/assets/img/formatted/veterinarians.jpg'}
                                        layout='fill'
                                        objectPosition='center'
                                        objectFit='cover'
