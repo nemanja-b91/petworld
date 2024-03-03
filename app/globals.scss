@@ -5,6 +5,14 @@
   font-weight: 400;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  footer {
+    margin-top: auto;
+  }
+}
+
 ul {
   margin-bottom: 0 !important;
 }
@@ -22,4 +30,21 @@ main {
   @media screen and (max-width: 992px) {
     padding-top: 144px;
   }
+}
+
+.navbar {
+  width: 100%;
+  .navbar-toggler {
+    position: relative;
+    z-index: 102;
+  }
+}
+#mainNavigation {
+  &.show {
+    right: 0;
+  }
+}
+.form-select:focus {
+  box-shadow: none !important;
+  border-color: #dee2e6 !important;
 }

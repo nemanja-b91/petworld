@@ -6,6 +6,10 @@ import './globals.scss'
 import Footer from "@/components/Footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import BootstrapClient from "@/components/BootstrapClient";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 
 export default function RootLayout({
@@ -22,6 +26,7 @@ export default function RootLayout({
           {children}
       </main>
       <Footer/>
+      <BootstrapClient />
       </body>
       </html>
   );

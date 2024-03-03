@@ -1,5 +1,6 @@
 import styles from './SubscribeBanner.module.scss';
 import Link from "next/link";
+
 export default function SubscribeBanner() {
     return (
         <div className="section-container">
@@ -12,7 +13,7 @@ export default function SubscribeBanner() {
                             Jump to filter
                         </Link>
                     </div>
-                    <img src={'/assets/img/banner.png'} className="card-img-bottom" alt="..."/>
+                    <img loading={'lazy'} src={'/assets/img/banner.png'} className="card-img-bottom" alt="..."/>
                 </div>
             </div>
         </div>

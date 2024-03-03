@@ -6,9 +6,13 @@ export default function CategoryList() {
     return (
         <div className={'section-container'}>
             <div className={`${styles.categorySectionWrapper} container`}>
+                <div className={'text-center mb-5'}>
+                    <h2>Here are some of the categories which you can choose on our website..</h2>
+                    <p>And some more text will probably come here..</p>
+                </div>
                 <div className="row">
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
-                        {/*<Link href={'/'}>*/}
+                    <Link href={'/restaurants'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
                                 <Image src={'/assets/img/cat.jpg'}
                                        layout='fill'
@@ -16,13 +20,14 @@ export default function CategoryList() {
                                        objectFit='cover'
                                        priority={false}
                                        alt={''}
+                                       loading={'lazy'}
                                 />
-                                <p className={styles.categorySectionWrapper__single__title}><span>Restorani</span></p>
+                                <p className={styles.categorySectionWrapper__single__title}><span>Restaurants</span></p>
                             </div>
-                        {/*</Link>*/}
+                        </Link>
                     </div>
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
-                        {/*<Link href={'/'}>*/}
+                        <Link href={'/shops'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
                                 <Image src={'/assets/img/cat.jpg'}
                                        layout='fill'
@@ -30,13 +35,14 @@ export default function CategoryList() {
                                        objectFit='cover'
                                        priority={false}
                                        alt={''}
+                                       loading={'lazy'}
                                 />
-                                <p className={styles.categorySectionWrapper__single__title}><span>Prodavnice</span></p>
+                                <p className={styles.categorySectionWrapper__single__title}><span>Shops</span></p>
                             </div>
-                        {/*</Link>*/}
+                        </Link>
                     </div>
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
-                        {/*<Link href={'/'}>*/}
+                        <Link href={'/saloons'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
                                 <Image src={'/assets/img/cat.jpg'}
                                        layout='fill'
@@ -44,13 +50,14 @@ export default function CategoryList() {
                                        objectFit='cover'
                                        priority={false}
                                        alt={''}
+                                       loading={'lazy'}
                                 />
-                                <p className={styles.categorySectionWrapper__single__title}><span>Saloni</span></p>
+                                <p className={styles.categorySectionWrapper__single__title}><span>Sallons</span></p>
                             </div>
-                        {/*</Link>*/}
+                        </Link>
                     </div>
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
-                        {/*<Link href={'/'}>*/}
+                        <Link href={'/veterinarians'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
                                 <Image src={'/assets/img/cat.jpg'}
                                        layout='fill'
@@ -58,10 +65,11 @@ export default function CategoryList() {
                                        objectFit='cover'
                                        priority={false}
                                        alt={''}
+                                       loading={'lazy'}
                                 />
-                                <p className={styles.categorySectionWrapper__single__title}><span>Veterinari</span></p>
+                                <p className={styles.categorySectionWrapper__single__title}><span>Veterinarians</span></p>
                             </div>
-                        {/*</Link>*/}
+                        </Link>
                     </div>
                 </div>
             </div>

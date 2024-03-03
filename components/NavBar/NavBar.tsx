@@ -9,27 +9,22 @@ const links = [
     {
         href: '/',
         title: 'Home',
-        class: 'menu-item'
+        class: 'nav-item'
     },
     {
         href: '/about',
         title: 'About',
-        class: 'menu-item'
-    },
-    {
-        href: '/search',
-        title: 'Search',
-        class: 'menu-item'
+        class: 'nav-item'
     },
     {
         href: '/blog',
         title: 'Blog',
-        class: 'menu-item'
+        class: 'nav-item'
     },
     {
         href: '/contact',
         title: 'Contact',
-        class: 'menu-item'
+        class: 'nav-item'
     },
 ]
 export default function NavBar() {
@@ -49,31 +44,37 @@ export default function NavBar() {
     return (
         <header id={'mainHeader'} className={'siteHeader'}>
             <div className={`${styles.headerContent} container`}>
-                <div className={styles.siteBranding}>
-                    <Link href={'/'}>
-                        <Image src={'/assets/img/pet-hotel-logo.svg'} alt={''}
-                               width={52}
-                               height={45}
-                        />
-                    </Link>
-                </div>
-                <nav id="site-navigation" className={`${styles.mainNavigation} ${isMobileOpened ? styles.mainNavigation__opened : ''}`}>
-                    <div className="primary-menu-wrapper">
-                        <div className="primary-menu-container">
-                            <ul id="primary-menu" className={styles.navMenu}>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <div className="container-fluid">
+                        <Link href={'/'} className={styles.siteBranding}>
+                            <Image src={'/assets/img/pet-hotel-logo.svg'} alt={''}
+                                   width={52}
+                                   height={45}/>
+                        </Link>
+                        <button className="navbar-toggler" type="button" onClick={onMobileOpen} aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className={`collapse navbar-collapse ${isMobileOpened ? 'show' : ''} ${styles.mainNavigation}`} id="mainNavigation">
+                            <ul className={`navbar-nav me-auto mb-2 mb-lg-0 ${styles.navMenu}`}>
                                 {links.map((link, index) => (
                                     <li key={index} className={`${styles.navMenu__item} ${link.class}`}>
-                                        <Link className={`${styles.navMenu__link} ${pathname === link.href ? `${styles.navMenu__link_active}` : ''}`} href={link.href}>{link.title}</Link></li>
+                                        <Link className={`nav-link ${styles.navMenu__link} ${pathname === link.href ? `${styles.navMenu__link_active}` : ''}`} href={link.href}>{link.title}</Link></li>
                                 ))}
+                                <li className={`nav-link dropdown ${styles.navMenu__link} p-0`}>
+                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Categories
+                                    </a>
+                                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/restaurants' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/restaurants'}>Restaurants</Link></li>
+                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/shops' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/shops'}>Shops</Link></li>
+                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/saloons' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/saloons'}>Saloons</Link></li>
+                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/veterinarians' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/veterinarians'}>Veterinarians</Link></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-                <button
-                    onClick={onMobileOpen}
-                    className={styles.menuToggle} aria-controls="primary-menu">
-                    <i className={`fa ${isMobileOpened ? 'fa-times' : 'fa-bars'}`}></i>
-                </button>
             </div>
         </header>
     )

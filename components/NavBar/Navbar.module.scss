@@ -7,9 +7,9 @@
   padding-bottom: 1.5rem;
   border-bottom: 3px solid #f2f2f2;
   .siteBranding {
+    margin-right: 15px;
     position: relative;
-    order: 1;
-    z-index: 101;
+    z-index: 102;
   }
   .mainNavigation {
     order: 2;
@@ -25,10 +25,7 @@
         }
       }
       a {
-        padding: 1rem 2rem;
-        &:first-of-type {
-          padding-left: 0;
-        }
+        padding: 0.5rem 1rem;
       }
       @media screen and (max-width: 768px) {
         padding: 0;
@@ -39,10 +36,13 @@
           }
         }
       }
+      .nav-link {
+        padding: 0;
+      }
     }
     @media screen and (max-width: 992px) {
       position: fixed;
-      display: flex;
+      display: flex !important;
       top: 0;
       right: -100%;
       width: 100%;
@@ -55,9 +55,7 @@
       .navMenu {
         flex-direction: column;
         justify-content: center;
-      }
-      &__opened {
-        right: 0;
+        width: 100%;
       }
     }
   }

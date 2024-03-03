@@ -1,6 +1,6 @@
 "use client";
-import {Suspense, useEffect, useState} from "react";
-import {useSearchParams} from "next/navigation";
+import {Suspense, useCallback, useEffect, useState} from "react";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import styles from "@/app/page.module.scss";
 import SearchResults from "@/components/SearchResults/SearchResults";
 import Link from "next/link";
@@ -18,13 +18,18 @@ type Result = {
 }
 
 export default function FilterComponent() {
-    const [data, setData] = useState(Array<Result>)
-    const [isErrorVisible, setIsErrorVisible] = useState(false)
+    const pathname = usePathname();
     const searchParams = useSearchParams()
 
-    let url = '';
+    const { replace } = useRouter();
+    const category = pathname.replace('/', '');
     const city = searchParams.get('city') ? searchParams.get('city') : ''
-    const category = searchParams.get('category') ? searchParams.get('category') : '';
+    const [data, setData] = useState(Array<Result>)
+    const [selectedCity, setSelectedCity]= useState(city ? city : 'All');
+    const [isErrorVisible, setIsErrorVisible] = useState(false);
+
+    let url = '';
+
 
     const fetchDataByFilter = (url: string) => {
         fetch(
@@ -45,18 +50,14 @@ export default function FilterComponent() {
 
     useEffect(() => {
         setIsErrorVisible(false)
-
-        if ((city && city !== '') && (category && category !== '')) {
-            url = `${process.env.BACKEND_API}/v1/search?city=${city}$category=${category}`
+        if (selectedCity && selectedCity !== 'All') {
+            url = `${process.env.BACKEND_API}/v1/search?city=${selectedCity}&category=${category}`
             fetchDataByFilter(url)
-        } else if (city && city !== '') {
-            url = `${process.env.BACKEND_API}/v1/search?city=${city}`
-            fetchDataByFilter(url)
-        } else if (category && category !== '') {
+        } else {
             url = `${process.env.BACKEND_API}/v1/search?category=${category}`
             fetchDataByFilter(url)
         }
-    }, [])
+    }, [category, selectedCity])
 
     const noResultsComponent = () => {
         return (
@@ -67,47 +68,47 @@ export default function FilterComponent() {
         )
     }
 
+    const onChangeSelectedCity = useCallback((value: string) => {
+        const params = new URLSearchParams(searchParams);
+        if(value && value !== 'All') {
+            setSelectedCity(value)
+            params.set('city', value)
+            replace(`${pathname}?${params.toString()}`);
+        } else {
+            setSelectedCity('All')
+            params.delete('city')
+            replace(`${pathname}`)
+        }
+    }, [city])
+
     return (
-        <div className={styles.main}>
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-3">
-                        <h4>Filter section</h4>
-                        <p>Preparing..</p>
-                    </div>
-                    <div className="col-md-9">
-                        <h4>Results section</h4>
-                        <Suspense>
-                            {data && data.length > 0 ? <SearchResults results={data}/> : noResultsComponent()}
-                        </Suspense>
-                        {isErrorVisible && (
-                            <p className='text-danger'>Sorry.. Error fetching data.</p>
-                        )}
-                    </div>
+        <div className={'mt-5'}>
+            <div className="row">
+                <div className={`col-md-2 ${styles.filterSection}`}>
+                    <h5>Filter section</h5>
+                    <select name="city" id="city"
+                            value={selectedCity}
+                            aria-label="City selection"
+                            className="form-select form-select-lg"
+                            onChange={(e) => onChangeSelectedCity(e.target.value)}>
+                        <option disabled={true} defaultValue={'All'}>Please select your city</option>
+                        <option value="All">All</option>
+                        <option value="Subotica">Subotica</option>
+                        <option value="Novi Sad">Novi Sad</option>
+                        <option value="Beograd">Beograd</option>
+                    </select>
+                </div>
+                <div className="col-md-10">
+                    <h5>Results section</h5>
+                    <Suspense>
+                        {data && data.length > 0 && <SearchResults results={data}/>}
+                        {data.length === 0 && noResultsComponent()}
+                    </Suspense>
+                    {isErrorVisible && (
+                        <p className='text-danger'>Sorry.. Error fetching data.</p>
+                    )}
                 </div>
             </div>
         </div>
     )
-    // return (
-    //     <>
-    //         {url && url !== '' && (
-    //             <>
-    //                 <h1>You've searched for:</h1>
-    //                 {city && <p>City: {city}</p>}
-    //                 {category && <p>Category: {category}</p>}
-    //                 {data && data?.length > 0 && (
-    //                     <ul>
-    //                         {data.map((item) => (
-    //                             <li key={item?.id}>{item?.title}</li>
-    //                         ))}
-    //                     </ul>
-    //                 )}
-    //             </>
-    //         )}
-    //         {url === '' && (
-    //             <h2>Bice djoka..</h2>
-    //         )}
-    //
-    //     </>
-    // )
 }
