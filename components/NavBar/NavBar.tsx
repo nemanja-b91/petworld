@@ -44,7 +44,7 @@ export default function NavBar() {
     return (
         <header id={'mainHeader'} className={'siteHeader'}>
             <div className={`${styles.headerContent} container`}>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <nav className="navbar navbar-expand-lg">
                     <div className="container-fluid">
                         <Link href={'/'} className={styles.siteBranding}>
                             <Image src={'/assets/img/pet-hotel-logo.svg'} alt={''}
