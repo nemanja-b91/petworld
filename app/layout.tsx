@@ -1,10 +1,10 @@
-import { Inter } from "next/font/google";
+import './globals.scss'
+import { Baloo_2 } from "next/font/google";
 import NavBar from "@/components/NavBar/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../assets/libraries/font-awesome.min.css';
-import './globals.scss'
 import Footer from "@/components/Footer/Footer";
-const inter = Inter({ subsets: ["latin"] });
+const baloo = Baloo_2({ subsets: ["latin"] });
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import BootstrapClient from "@/components/BootstrapClient";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
       <html lang="en">
       <SpeedInsights/>
-      <body className={inter.className}>
+      <body className={baloo.className}>
       <NavBar/>
       <main>
           {children}
