@@ -1,7 +1,15 @@
+* {
+
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
 body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+
   footer {
     margin-top: auto;
   }
@@ -10,15 +18,19 @@ body {
 ul {
   margin-bottom: 0 !important;
 }
+
 .section-container {
   padding: 40px 0;
 }
+
 a {
   text-decoration: none !important;
+
   &:hover {
     color: #ff6853;
   }
 }
+
 main {
   padding: 3rem 0;
   @media screen and (max-width: 992px) {
@@ -28,17 +40,40 @@ main {
 
 .navbar {
   width: 100%;
+
   .navbar-toggler {
     position: relative;
     z-index: 102;
   }
 }
+
 #mainNavigation {
   &.show {
     right: 0;
   }
 }
+
 .form-select:focus {
   box-shadow: none !important;
   border-color: #dee2e6 !important;
+}
+
+blockquote {
+  padding: 1rem 0 1rem 3rem;
+  position: relative;
+  color: #333437;
+  font-size: 20px;
+  font-weight: 700;
+  &::after {
+    content: "”";
+    font-family: "Baloo Chettan", sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 85px;
+    font-weight: 400;
+    position: absolute;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    color: rgb(255, 104, 83);
+  }
 }

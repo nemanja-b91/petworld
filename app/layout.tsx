@@ -9,6 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import BootstrapClient from "@/components/BootstrapClient";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import CookieConsent from "@/components/CookieConsent/CookieConsent";
 config.autoAddCss = false;
 
 
@@ -24,6 +25,7 @@ export default function RootLayout({
       <NavBar/>
       <main>
           {children}
+          <CookieConsent />
       </main>
       <Footer/>
       <BootstrapClient />

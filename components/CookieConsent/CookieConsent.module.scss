@@ -1,0 +1,14 @@
+.cookieConsent {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 15px 10px;
+  border-top: 1px solid #dedede;
+  box-shadow: 2px 0 3px #333333;
+  z-index: 999999999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,15 +1,23 @@
 "use client";
 import styles from './BlogList.module.scss'
 import Link from "next/link";
+import moment from "moment";
 
 type Post = {
     title: string,
     description: string,
     author: string,
-    urlToImage: string,
+    featured_image: string,
+    slug: string,
+    created_at: string,
 }
 
 function BlogList({posts}: any) {
+
+    const generatePostDate = (date: string) => {
+        return moment(date).format('DD MMM, YYYY')
+    }
+
     return (
         <div className={styles.blogWrapper}>
             <h2 className='mb-4'>Most Recent Posts</h2>
@@ -18,18 +26,18 @@ function BlogList({posts}: any) {
                     <div className={index === 0 ? `${styles.recentPostWrapper__single}` : `${styles.recentPostWrapper__short}`}
                     key={index}>
                         {index === 0 && (
-                            <Link href="/blog/still-to-be-done/">
-                                <div style={{backgroundImage: `url("${post.urlToImage}")`}} className={`${styles.blogBackground}`}></div>
+                            <Link href={`/blog/${post.slug}/`}>
+                                <div style={{backgroundImage: `url("${post.featured_image}")`}} className={`${styles.blogBackground}`}></div>
                             </Link>
                         )}
                         <div>
-                            <Link href="/blog/still-to-be-done/">
+                            <Link href={`/blog/${post.slug}/`}>
                                 {index === 0 ? <h2>{post.title}</h2> : <h4>{post.title}</h4>}
                             </Link>
                             {post.description && (
                                 <p>{post.description}</p>
                             )}
-                            <span className={styles.dateAuthor}>February 27, 2024 {post?.author ? ` | ${post.author}` : null}</span>
+                            <span className={styles.dateAuthor}>{generatePostDate(post.created_at)} - {post?.author ? ` | ${post.author}` : null}</span>
                         </div>
                     </div>
                 ))}

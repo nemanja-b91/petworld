@@ -23,7 +23,7 @@ export const metadata = {
 
 async function getData() {
     const res = await fetch(
-        'https://newsapi.org/v2/top-headlines?country=us&apiKey=20fdfd06be214a1995f13993eec28c9c&pageSize=5&category=business',
+        `${process.env.BACKEND_API}/v1/posts`,
         {
             next: {revalidate: 10},
         }
@@ -36,12 +36,14 @@ async function getData() {
 }
 
 export default async function BlogPage() {
-    const data = await getData()
+    const data = await getData();
     return (
         <div className={styles.main}>
             <div className="container">
                 <SinglePageHero name={pageName}/>
-                <BlogList posts={data?.articles}/>
+                <Suspense>
+                    <BlogList posts={data?.results}/>
+                </Suspense>
             </div>
         </div>
     )
