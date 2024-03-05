@@ -23,7 +23,7 @@ export default function CookieConsent() {
             <span className="text-dark text-base mr-16">
                   This website uses cookies to improve user experience. By using our website you consent to all cookies in accordance with our Cookie Policy.
                 </span>
-            <button className="btn btn-success text-white" onClick={() => acceptCookie()}>
+            <button className="btn text-white" onClick={() => acceptCookie()}>
                 Accept
             </button>
         </div>

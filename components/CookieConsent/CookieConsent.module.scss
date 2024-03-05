@@ -11,4 +11,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  button {
+    background-color: #ff6853;
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: #ad4d40 !important;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    align-items: inherit;
+    button {
+      margin-top: 1.25rem;
+    }
+  }
 }
