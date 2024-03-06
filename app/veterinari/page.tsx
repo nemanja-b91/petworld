@@ -39,7 +39,7 @@ export default function VeterinariansPage() {
                         the cites of the word in classical literature, discovered the undoubtable source.</p>
                 </article>
                 <Suspense fallback={<p>Loading data...</p>}>
-                    <FilterComponent/>
+                    <FilterComponent slug={'veterinarians'}/>
                 </Suspense>
             </div>
         </div>

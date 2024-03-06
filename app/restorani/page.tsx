@@ -37,7 +37,7 @@ export default function RestaurantsPage() {
                 </article>
 
                 <Suspense>
-                    <FilterComponent/>
+                    <FilterComponent slug={'restaurants'}/>
                 </Suspense>
             </div>
         </div>

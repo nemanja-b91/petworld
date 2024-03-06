@@ -3,3 +3,10 @@
     margin-bottom: 2rem;
   }
 }
+.notFound {
+  display: flex;
+  background-color: #333333;
+  &__wrapper {
+    margin: auto;
+  }
+}

@@ -2,7 +2,7 @@ import Image from "next/legacy/image";
 import styles from './SearchResults.module.scss';
 import Link from "next/link";
 
-export default function SearchResults({results}: any) {
+export default function SearchResults({slug, results}: any) {
     // const photo = '/assets/img/blog5.jpg';
     const photo = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png';
 
@@ -33,7 +33,7 @@ export default function SearchResults({results}: any) {
                                 <div className={`card-body ${styles.resultItems__item_content}`}>
                                     <h5 className="card-title">{item?.title}</h5>
                                     <p className="card-text">{trimText(item?.excerpt, 100) }</p>
-                                    <Link href={`/${item.category}/${item.slug}`}
+                                    <Link href={`/${slug}/${item.slug}`}
                                           className={`btn rounded-5 ${styles.resultItems__item_btn}`}>Read more</Link>
                                 </div>
                             </div>

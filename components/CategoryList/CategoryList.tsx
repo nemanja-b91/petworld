@@ -12,7 +12,7 @@ export default function CategoryList() {
                 </div>
                 <div className="row">
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
-                    <Link href={'/restaurants'}>
+                    <Link href={'/restorani'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
                                 <Image src={'/assets/img/formatted/pet-in-restaurant.jpg'}
                                        layout='fill'
@@ -22,12 +22,12 @@ export default function CategoryList() {
                                        alt={''}
                                        loading={'lazy'}
                                 />
-                                <p className={styles.categorySectionWrapper__single__title}><span>Restaurants</span></p>
+                                <p className={styles.categorySectionWrapper__single__title}><span>Restorani</span></p>
                             </div>
                         </Link>
                     </div>
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
-                        <Link href={'/shops'}>
+                        <Link href={'/prodavnice'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
                                 <Image src={'/assets/img/formatted/pet-store-shop.jpg'}
                                        layout='fill'
@@ -37,12 +37,12 @@ export default function CategoryList() {
                                        alt={''}
                                        loading={'lazy'}
                                 />
-                                <p className={styles.categorySectionWrapper__single__title}><span>Shops</span></p>
+                                <p className={styles.categorySectionWrapper__single__title}><span>Prodavnice</span></p>
                             </div>
                         </Link>
                     </div>
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
-                        <Link href={'/saloons'}>
+                        <Link href={'/saloni'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
                                 <Image src={'/assets/img/formatted/pet-in-grooming-saloon.jpg'}
                                        layout='fill'
@@ -52,12 +52,12 @@ export default function CategoryList() {
                                        alt={''}
                                        loading={'lazy'}
                                 />
-                                <p className={styles.categorySectionWrapper__single__title}><span>Saloons</span></p>
+                                <p className={styles.categorySectionWrapper__single__title}><span>Saloni</span></p>
                             </div>
                         </Link>
                     </div>
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
-                        <Link href={'/veterinarians'}>
+                        <Link href={'/veterinari'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
                                 <Image src={'/assets/img/formatted/veterinarians.jpg'}
                                        layout='fill'
@@ -67,7 +67,7 @@ export default function CategoryList() {
                                        alt={''}
                                        loading={'lazy'}
                                 />
-                                <p className={styles.categorySectionWrapper__single__title}><span>Veterinarians</span></p>
+                                <p className={styles.categorySectionWrapper__single__title}><span>Veterinari</span></p>
                             </div>
                         </Link>
                     </div>

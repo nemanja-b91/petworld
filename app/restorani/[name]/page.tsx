@@ -1,4 +1,4 @@
-import styles from "@/app/restaurants/restaurants.module.scss";
+import styles from "@/app/restorani/restaurants.module.scss";
 import SingleCategoryHero from "@/components/SingleCategoryHero/SingleCategoryHero";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPhone, faGlobeEurope, faEnvelope} from "@fortawesome/free-solid-svg-icons";

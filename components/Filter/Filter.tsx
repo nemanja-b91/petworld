@@ -17,12 +17,13 @@ type Result = {
     ]
 }
 
-export default function FilterComponent() {
+export default function FilterComponent({slug}: any) {
     const pathname = usePathname();
     const searchParams = useSearchParams()
 
     const { replace } = useRouter();
-    const category = pathname.replace('/', '');
+    const path = pathname.replace('/', '');
+    const category = slug;
     const city = searchParams.get('city') ? searchParams.get('city') : ''
     const [data, setData] = useState(Array<Result>)
     const [selectedCity, setSelectedCity]= useState(city ? city : 'All');
@@ -101,7 +102,7 @@ export default function FilterComponent() {
                 <div className="col-md-10">
                     <h5>Results section</h5>
                     <Suspense>
-                        {data && data.length > 0 && <SearchResults results={data}/>}
+                        {data && data.length > 0 && <SearchResults slug={path} results={data}/>}
                         {data.length === 0 && noResultsComponent()}
                     </Suspense>
                     {isErrorVisible && (
