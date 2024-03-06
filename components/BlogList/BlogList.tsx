@@ -5,7 +5,7 @@ import moment from "moment";
 
 type Post = {
     title: string,
-    description: string,
+    excerpt: string,
     author: string,
     featured_image: string,
     slug: string,
@@ -34,8 +34,8 @@ function BlogList({posts}: any) {
                             <Link href={`/blog/${post.slug}/`}>
                                 {index === 0 ? <h2>{post.title}</h2> : <h4>{post.title}</h4>}
                             </Link>
-                            {post.description && (
-                                <p>{post.description}</p>
+                            {post.excerpt && (
+                                <p>{post.excerpt}</p>
                             )}
                             <span className={styles.dateAuthor}>{generatePostDate(post.created_at)} - {post?.author ? ` | ${post.author}` : null}</span>
                         </div>
