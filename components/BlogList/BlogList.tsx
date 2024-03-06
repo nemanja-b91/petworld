@@ -37,7 +37,7 @@ function BlogList({posts}: any) {
                             {post.excerpt && (
                                 <p>{post.excerpt}</p>
                             )}
-                            <span className={styles.dateAuthor}>{generatePostDate(post.created_at)} - {post?.author ? ` | ${post.author}` : null}</span>
+                            <span className={styles.dateAuthor}>{generatePostDate(post.created_at)} {post?.author ? ` | ${post.author}` : null}</span>
                         </div>
                     </div>
                 ))}
