@@ -5,7 +5,7 @@ import {Suspense} from "react";
 import FilterComponent from "@/components/Filter/Filter";
 import Image from "next/legacy/image";
 
-const pageName: String = 'Shops';
+const pageName: String = 'Prodavnice';
 
 export const metadata = {
     metadataBase: new URL('https://petworld-five.vercel.app/'),

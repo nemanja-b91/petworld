@@ -8,12 +8,12 @@ import {useEffect, useState} from "react";
 const links = [
     {
         href: '/',
-        title: 'Home',
+        title: 'Početna',
         class: 'nav-item'
     },
     {
-        href: '/about',
-        title: 'About',
+        href: '/o-nama',
+        title: 'O Nama',
         class: 'nav-item'
     },
     {
@@ -22,8 +22,8 @@ const links = [
         class: 'nav-item'
     },
     {
-        href: '/contact',
-        title: 'Contact',
+        href: '/kontakt',
+        title: 'Kontakt',
         class: 'nav-item'
     },
 ]
@@ -65,10 +65,10 @@ export default function NavBar() {
                                         Categories
                                     </a>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/restaurants' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/restaurants'}>Restaurants</Link></li>
-                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/shops' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/shops'}>Shops</Link></li>
-                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/saloons' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/saloons'}>Saloons</Link></li>
-                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/veterinarians' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/veterinarians'}>Veterinarians</Link></li>
+                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/restorani' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/restorani'}>Restorani</Link></li>
+                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/prodavnice' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/prodavnice'}>Prodavnice</Link></li>
+                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/saloni' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/saloni'}>Saloni</Link></li>
+                                        <li><Link className={`${styles.navMenu__link} ${pathname === '/veterinari' ? `${styles.navMenu__link_active}` : ''} dropdown-item`} href={'/veterinari'}>Veterinari</Link></li>
                                     </ul>
                                 </li>
                             </ul>

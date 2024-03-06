@@ -1,7 +1,7 @@
 import styles from "@/app/page.module.scss";
 import SinglePageHero from "@/components/SinglePageHero/SinglePageHero";
 import {openGraphImage} from "@/app/shared-metadata";
-const pageName: String = 'About';
+const pageName: String = 'O Nama';
 
 export const metadata = {
     metadataBase: new URL('https://petworld-five.vercel.app/'),

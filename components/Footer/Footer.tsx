@@ -13,8 +13,8 @@ export default function Footer() {
                         </div>
                         <div className="col-md-6">
                             <ul className={`d-flex ${styles.footerContainer__links}`}>
-                                <li><Link href="/privacy-policy">Privacy policy</Link></li>
-                                <li className='ms-2'><Link href="/terms-and-conditions">Terms & conditions</Link></li>
+                                <li><Link href="/polisa-privatnosti">Polisa privatnosti</Link></li>
+                                <li className='ms-2'><Link href="/uslovi-koriscenja">Uslovi korišćenja</Link></li>
                             </ul>
                         </div>
                     </div>

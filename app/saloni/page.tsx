@@ -1,9 +1,11 @@
 import styles from "@/app/page.module.scss";
 import SinglePageHero from "@/components/SinglePageHero/SinglePageHero";
 import {openGraphImage} from "@/app/shared-metadata";
-import FilterComponent from "@/components/Filter/Filter";
 import {Suspense} from "react";
-const pageName: String = 'Restaurants';
+import FilterComponent from "@/components/Filter/Filter";
+import Image from "next/legacy/image";
+
+const pageName: String = 'Saloni';
 
 export const metadata = {
     metadataBase: new URL('https://petworld-five.vercel.app/'),
@@ -20,7 +22,9 @@ export const metadata = {
     }
 }
 
-export default function RestaurantsPage() {
+
+export default function SaloonsPage() {
+
     return (
         <div className={styles.main}>
             <div className="container">
@@ -35,8 +39,7 @@ export default function RestaurantsPage() {
                         through
                         the cites of the word in classical literature, discovered the undoubtable source.</p>
                 </article>
-
-                <Suspense>
+                <Suspense fallback={<p>Loading data...</p>}>
                     <FilterComponent/>
                 </Suspense>
             </div>
