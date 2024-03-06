@@ -13,7 +13,9 @@ export async function generateMetadata({params}: any) {
         title: `PetWorld | ${data.results.title}`,
         description: 'Sve sto vam je potrebno za vašeg ljubimca',
         openGraph: {
-            ...openGraphImage,
+            images: [
+                data.results.featured_image
+            ],
             title: `PetWorld`,
             description: 'Sve sto vam je potrebno za vašeg ljubimca',
             url: '/',
