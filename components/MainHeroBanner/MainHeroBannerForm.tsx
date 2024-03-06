@@ -33,12 +33,12 @@ export default function MainHeroBannerForm() {
                         aria-label="Category selection"
                         className="form-select form-select-lg"
                         onChange={(e) => onCategoryChange(e)}>
-                    <option disabled={true} defaultValue={'All'}>Please select your category</option>
-                    <option value="All">All</option>
-                    <option value="restaurants">Restaurants</option>
-                    <option value="shops">Shops</option>
-                    <option value="saloons">Saloons</option>
-                    <option value="veterinarians">Veterinarians</option>
+                    <option disabled={true} defaultValue={'All'}>Izaberite grad</option>
+                    <option value="All">Sve</option>
+                    <option value="restorani">Restorani</option>
+                    <option value="prodavnice">Prodavnice</option>
+                    <option value="saloni">Saloni</option>
+                    <option value="veterinari">Veterinari</option>
                 </select>
             </div>
             <div className="mb-3">
@@ -48,8 +48,8 @@ export default function MainHeroBannerForm() {
                         className="form-select form-select-lg"
                         onChange={(e) => setSelectedCity(e.target.value)}
                         disabled={isCityDisabled}>
-                    <option disabled={true} defaultValue={'All'}>Please select your city</option>
-                    <option value="All">All</option>
+                    <option disabled={true} defaultValue={'All'}>Izaberite kategoriju</option>
+                    <option value="All">Sve</option>
                     <option value="Subotica">Subotica</option>
                     <option value="Novi Sad">Novi Sad</option>
                     <option value="Beograd">Beograd</option>

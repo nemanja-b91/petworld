@@ -7,10 +7,10 @@ export default function SubscribeBanner() {
             <div className={`container`}>
                 <div className={`card ${styles.subscribeBanner__card}`}>
                     <div className="card-body text-center mb-5">
-                        <h3 className="card-title">You think we can help you ?</h3>
-                        <p className="card-text">Jump to the filter on top of the screen and try it out !</p>
-                        <Link href={'#main-filter'} className='btn btn-outline-light btn-lg rounded-5'>
-                            Jump to filter
+                        <h3 className="card-title">Mislite da možemo da vam pomognemo u vašoj potrazi?</h3>
+                        <p className="card-text">Izaberite grad u filteru i probajte!</p>
+                        <Link href={'#main-filter'} className='btn btn-outline-light btn-lg'>
+                            Filter
                         </Link>
                     </div>
                     <img loading={'lazy'} src={'/assets/img/banner.png'} className="card-img-bottom" alt="..."/>

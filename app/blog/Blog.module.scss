@@ -26,4 +26,12 @@
       margin-bottom: 20px;
     }
   }
+  &__content {
+    img {
+      @media screen and (max-width: 992px) {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
 }

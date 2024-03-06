@@ -12,12 +12,7 @@
     z-index: 102;
   }
   .mainNavigation {
-    order: 2;
     .navMenu {
-      display: flex;
-      align-items: center;
-      list-style-type: none;
-
       &__link {
         @include defaultMenuItem;
         &_active {
@@ -34,6 +29,13 @@
           a {
             padding: 0;
           }
+          ul {
+            padding-left: 20px;
+            border: none;
+            a {
+              padding: 0.5rem 1rem;
+            }
+          }
         }
       }
       .nav-link {
@@ -41,22 +43,7 @@
       }
     }
     @media screen and (max-width: 992px) {
-      position: fixed;
-      display: flex !important;
-      top: 0;
-      right: -100%;
-      width: 100%;
-      height: 100%;
-      background-color: #ffffff;
-      align-items: center;
-      justify-content: center;
-      transition: all .3s ease-in;
-      z-index: 100;
-      .navMenu {
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-      }
+      padding: 0;
     }
   }
   .menuToggle {

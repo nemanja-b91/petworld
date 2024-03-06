@@ -41,6 +41,20 @@ async function getPostData(slug: any) {
     return res.json()
 }
 
+function readingTime(text: string) {
+    const averageWPM = 250;
+    const adjustedText = text.replace(/(.)\1+/g, '$1');
+    const adjustedSentences = adjustedText.replace(/([.!?])\s*\1+/g, '$1');
+    const adjustedCharCount = adjustedSentences.length;
+    const adjustedWords = adjustedSentences.trim().split(/\s+/);
+    const adjustedWordCount = adjustedWords.length;
+    const averageWordLength = adjustedCharCount / adjustedWordCount;
+    const adjustedTime = (adjustedCharCount / averageWPM) * (averageWordLength / 5);
+    return adjustedTime > 1 ? Math.round(adjustedTime) + " min" : "Manje od 1 min";
+}
+
+
+
 export default async function SingleBlogPage({params}: any) {
 
     const data = await getPostData(params.name)
@@ -61,66 +75,31 @@ export default async function SingleBlogPage({params}: any) {
                 <div className={styles.singlePost__details}>
                     <span className={'me-5'}>
                         <FontAwesomeIcon color={'#ff6853'} icon={faUserGear} className={'me-2'}/>
-                        <strong>Author:</strong> {data.results.author}
+                        <strong>Autor:</strong> {data.results.author}
                     </span>
                     <span className={'me-5'}>
                         <FontAwesomeIcon color={'#ff6853'} icon={faCalendarAlt} className={'me-2'}/>
-                        <strong>Published:</strong> {moment(data.results.created_at).format('DD MMM, YYYY')}
+                        <strong>Objavljeno:</strong> {moment(data.results.created_at).format('DD MMM, YYYY')}
                     </span>
                     <span>
                         <FontAwesomeIcon color={'#ff6853'} icon={faBookReader} className={'me-2'}/>
-                        <strong>Reading time: </strong> 2 minutes
+                        <strong>Vreme čitanja: </strong> {readingTime(data.results.content)}
                     </span>
                 </div>
                 <div className="col-md-10 mx-auto">
                     <div className="row">
-                        <div className="col-md-2">
-                            <div className={styles.singlePost__socialShare}>
-                                <span><strong>Share:</strong></span>
-                                <ul>
-                                    <li>
-                                        <FontAwesomeIcon style={{fontSize: '30px'}} icon={faGlobe}/>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="col-md-10">
-                            <article dangerouslySetInnerHTML={markup}></article>
-                            {/*<h2>Some headline from post</h2>*/}
-                            {/*<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.*/}
-                            {/*    Richard*/}
-                            {/*    McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going*/}
-                            {/*    through*/}
-                            {/*    the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"*/}
-                            {/*    (The*/}
-                            {/*    Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem*/}
-                            {/*    Ipsum,*/}
-                            {/*    "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>*/}
-                            {/*<p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus*/}
-                            {/*    PageMaker*/}
-                            {/*    including versions of Lorem Ipsum.</p>*/}
-
-                            {/*<h2>Yet, another headline</h2>*/}
-                            {/*<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.*/}
-                            {/*    Richard*/}
-                            {/*    McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going*/}
-                            {/*    through*/}
-                            {/*    the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"*/}
-                            {/*    (The*/}
-                            {/*    Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem*/}
-                            {/*    Ipsum,*/}
-                            {/*    "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>*/}
-                            {/*<p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus*/}
-                            {/*    PageMaker*/}
-                            {/*    including versions of Lorem Ipsum.</p>*/}
-
-                            {/*<h3>Hey, look! Smaller headline</h3>*/}
-                            {/*<p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus*/}
-                            {/*    PageMaker*/}
-                            {/*    including versions of Lorem Ipsum.</p>*/}
-                            {/*<blockquote>*/}
-                            {/*    WOWWWWWW !!! This is some quoted text.*/}
-                            {/*</blockquote>*/}
+                        {/*<div className="col-md-2">*/}
+                        {/*    <div className={styles.singlePost__socialShare}>*/}
+                        {/*        <span><strong>Podeli:</strong></span>*/}
+                        {/*        <ul>*/}
+                        {/*            <li>*/}
+                        {/*                <FontAwesomeIcon style={{fontSize: '30px'}} icon={faGlobe}/>*/}
+                        {/*            </li>*/}
+                        {/*        </ul>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
+                        <div className="col-md-12">
+                            <article className={styles.singlePost__content} dangerouslySetInnerHTML={markup}></article>
                         </div>
                     </div>
                 </div>

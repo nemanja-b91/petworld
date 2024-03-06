@@ -21,12 +21,12 @@ export default function FilterComponent({slug}: any) {
     const pathname = usePathname();
     const searchParams = useSearchParams()
 
-    const { replace } = useRouter();
+    const {replace} = useRouter();
     const path = pathname.replace('/', '');
     const category = slug;
     const city = searchParams.get('city') ? searchParams.get('city') : ''
     const [data, setData] = useState(Array<Result>)
-    const [selectedCity, setSelectedCity]= useState(city ? city : 'All');
+    const [selectedCity, setSelectedCity] = useState(city ? city : 'All');
     const [isErrorVisible, setIsErrorVisible] = useState(false);
 
     let url = '';
@@ -63,15 +63,15 @@ export default function FilterComponent({slug}: any) {
     const noResultsComponent = () => {
         return (
             <>
-                <p>No results per selected criteria. Go back to homepage and change filters while we finish developing filtering functionality on search page.</p>
-                <p>Sorry for the inconvenience. :)</p>
+                <p>Nema rezultata po traženom kriterijumu. Promenite filter.</p>
+                <p>Izvinjavamo se na neprijatnosti. :)</p>
             </>
         )
     }
 
     const onChangeSelectedCity = useCallback((value: string) => {
         const params = new URLSearchParams(searchParams);
-        if(value && value !== 'All') {
+        if (value && value !== 'All') {
             setSelectedCity(value)
             params.set('city', value)
             replace(`${pathname}?${params.toString()}`);
@@ -86,21 +86,21 @@ export default function FilterComponent({slug}: any) {
         <div className={'mt-5'}>
             <div className="row">
                 <div className={`col-md-2 ${styles.filterSection}`}>
-                    <h5>Filter section</h5>
+                    <h5>Filteri</h5>
                     <select name="city" id="city"
                             value={selectedCity}
                             aria-label="City selection"
                             className="form-select form-select-lg"
                             onChange={(e) => onChangeSelectedCity(e.target.value)}>
-                        <option disabled={true} defaultValue={'All'}>Please select your city</option>
-                        <option value="All">All</option>
+                        <option disabled={true} defaultValue={'All'}>Izaberite grad</option>
+                        <option value="All">Sve</option>
                         <option value="Subotica">Subotica</option>
                         <option value="Novi Sad">Novi Sad</option>
                         <option value="Beograd">Beograd</option>
                     </select>
                 </div>
                 <div className="col-md-10">
-                    <h5>Results section</h5>
+                    <h5>Rezultati {data && data.length > 0 && (`: ${data.length}`)}</h5>
                     <Suspense>
                         {data && data.length > 0 && <SearchResults slug={path} results={data}/>}
                         {data.length === 0 && noResultsComponent()}

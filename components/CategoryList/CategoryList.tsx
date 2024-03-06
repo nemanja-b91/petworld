@@ -7,12 +7,12 @@ export default function CategoryList() {
         <div className={'section-container'}>
             <div className={`${styles.categorySectionWrapper} container`}>
                 <div className={'text-center mb-5'}>
-                    <h2>Here are some of the categories which you can choose on our website..</h2>
-                    <p>And some more text will probably come here..</p>
+                    <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                 </div>
                 <div className="row">
                     <div className={`${styles.categorySectionWrapper__item} col-sm-12 col-md-6 col-lg-3`}>
-                    <Link href={'/restorani'}>
+                        <Link href={'/restorani'}>
                             <div className={`${styles.categorySectionWrapper__single}`}>
                                 <Image src={'/assets/img/formatted/pet-in-restaurant.jpg'}
                                        layout='fill'

@@ -9,8 +9,8 @@ export default function MainHeroBanner() {
                 <div className="row align-items-center">
                     <div id='main-filter' className={`col-md-6 ${styles.mainHeroBanner__wrapper}`}>
                         <div className={styles.mainHeroBanner__content}>
-                            <h1>Yay, we love your pets!</h1>
-                            <p>Please give us basic information. Thanks!</p>
+                            <h1>WOW, neki top naslov</h1>
+                            <p>Izaberi filter i vidi..</p>
                             <MainHeroBannerForm/>
                         </div>
                     </div>

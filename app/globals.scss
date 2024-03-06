@@ -77,3 +77,20 @@ blockquote {
     color: rgb(255, 104, 83);
   }
 }
+
+.form-select {
+  &:disabled {
+    background-color: #DEDEDE !important;
+    color: #717171;
+  }
+}
+
+.offcanvas-backdrop {
+  display: none !important;
+}
+
+@media screen and (max-width: 992px) {
+  .offcanvas {
+    visibility: visible !important;
+  }
+}
