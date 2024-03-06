@@ -6,7 +6,7 @@ import {Suspense} from "react";
 const pageName: String = 'Restaurants';
 
 export const metadata = {
-    metadataBase: new URL('https://petworld-five.vercell.com/'),
+    metadataBase: new URL('https://petworld-five.vercel.app/'),
     title: `PetWorld | ${pageName}`,
     description: 'Sve sto vam je potrebno za vašeg ljubimca',
     openGraph: {

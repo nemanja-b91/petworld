@@ -9,7 +9,7 @@ import Image from "next/legacy/image";
 export async function generateMetadata({params}: any) {
     const data = await getPostData(params.name)
     return {
-        metadataBase: new URL('https://petworld-five.vercell.com/'),
+        metadataBase: new URL('https://petworld-five.vercel.app/'),
         title: `PetWorld | ${data.results.title}`,
         description: 'Sve sto vam je potrebno za vašeg ljubimca',
         openGraph: {

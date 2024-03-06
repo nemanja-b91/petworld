@@ -5,7 +5,7 @@ import {openGraphImage} from "@/app/shared-metadata";
 const pageName: String = 'Polisa o privatnosti';
 
 export const metadata = {
-    metadataBase: new URL('https://petworld-five.vercell.com/'),
+    metadataBase: new URL('https://petworld-five.vercel.app/'),
     title: `PetWorld | ${pageName}`,
     description: 'Sve sto vam je potrebno za vašeg ljubimca',
     openGraph: {

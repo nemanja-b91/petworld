@@ -5,7 +5,7 @@ import SubscribeBanner from "@/components/SubscribeBanner/SubscribeBanner";
 import {openGraphImage} from "@/app/shared-metadata";
 
 export const metadata = {
-    metadataBase: new URL('https://petworld-five.vercell.com/'),
+    metadataBase: new URL('https://petworld-five.vercel.app/'),
     title: 'PetWorld | Sve sto vam je potrebno za vašeg ljubimca',
     description: 'Sve sto vam je potrebno za vašeg ljubimca',
     openGraph: {
