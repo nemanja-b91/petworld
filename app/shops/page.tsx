@@ -8,7 +8,7 @@ import Image from "next/legacy/image";
 const pageName: String = 'Shops';
 
 export const metadata = {
-    metadataBase: new URL('https://acme.com'),
+    metadataBase: new URL('https://petworld-five.vercell.com/'),
     title: `PetWorld | ${pageName}`,
     description: 'Sve sto vam je potrebno za vašeg ljubimca',
     openGraph: {

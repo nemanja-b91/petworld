@@ -12,7 +12,7 @@ type Param = {
 export async function generateMetadata({params}: any) {
     const data = await getSingleData(params.name)
     return {
-        metadataBase: new URL('https://acme.com'),
+        metadataBase: new URL('https://petworld-five.vercell.com/'),
         title: `PetWorld | ${data.item.title}`,
         description: 'Sve sto vam je potrebno za vašeg ljubimca',
         openGraph: {

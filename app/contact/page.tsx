@@ -4,7 +4,7 @@ import {openGraphImage} from "@/app/shared-metadata";
 const pageName: String = 'Contact';
 
 export const metadata = {
-    metadataBase: new URL('https://acme.com'),
+    metadataBase: new URL('https://petworld-five.vercell.com/'),
     title: `PetWorld | ${pageName}`,
     description: 'Sve sto vam je potrebno za vašeg ljubimca',
     openGraph: {
